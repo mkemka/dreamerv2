@@ -90,6 +90,8 @@ def load_runs(args):
 
 def load_run(filename, indir, args):
   task, method, seed = filename.relative_to(indir).parts[:-1]
+  if task == 'atari_jamesbond':
+    task = 'atari_james_bond'
   prefix = f'indir{args.indir.index(indir)+1}_'
   seed = prefix + seed
   if args.prefix:
