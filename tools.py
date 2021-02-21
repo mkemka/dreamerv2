@@ -490,9 +490,9 @@ class Optimizer(tf.Module):
     metrics = {}
     metrics[f'{self._name}_loss'] = loss
     metrics[f'{self._name}_grad_norm'] = norm
-    if self._mixed:
-      metrics[f'{self._name}_loss_scale'] = \
-          self._opt.loss_scale._current_loss_scale
+    #if self._mixed:
+    #  metrics[f'{self._name}_loss_scale'] = \
+    #      self._opt.loss_scale._current_loss_scale
     return metrics
 
   def _apply_weight_decay(self, varibs):
